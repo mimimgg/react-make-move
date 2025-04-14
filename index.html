@@ -7,14 +7,15 @@
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script>
     const root = document.getElementById("root");
-    const h3 = React.createElement(
+    const Title = <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>"hello I'm h3"</h3>
+    /* const h3 = React.createElement(
       "h3",
       {
         id: "title",
         onMouseEnter: () => console.log("mouse enter"),
       },
       "hello I'm h3"
-    );
+    ); */
     const btn = React.createElement(
       "button",
       {
@@ -27,5 +28,6 @@
     );
     const container = React.createElement("div", null, [h3, btn]);
     ReactDOM.render(container, root);
+
   </script>
 </html>
