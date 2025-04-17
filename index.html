@@ -7,6 +7,39 @@
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
+
+    /* 
+    1. 단위 변환:
+    분(Minutes) -> 시간(Hours) 변환: 사용자가 분 단위로 숫자를 입력하면, 해당 값을 시간으로 변환하여 표시해야 한다. (나누기 60, 반올림 처리)
+    시간(Hours) -> 분(Minutes) 변환: 사용자가 시간 단위로 숫자를 입력하면, 해당 값을 분으로 변환하여 표시해야 한다. (곱하기 60)
+    2. 입력 필드:
+    분(Minutes) 입력 필드:
+    flipped 상태가 false일 때 활성화되어야 한다.
+    사용자가 숫자 값을 입력할 수 있어야 한다.
+    입력된 값은 amount 상태에 업데이트되어야 한다.
+    placeholder로 "minutes"가 표시되어야 한다.
+    시간(Hours) 입력 필드:
+    flipped 상태가 true일 때 활성화되어야 한다.
+    사용자가 숫자 값을 입력할 수 있어야 한다.
+    입력된 값은 amount 상태에 영향을 주어야 한다.
+    placeholder로 "Hours"가 표시되어야 한다.
+    3. 상태 관리:
+    amount 상태는 사용자가 입력한 숫자 값을 저장해야 한다.
+    flipped 상태는 현재 변환 모드를 나타내는 boolean 값을 가져야 한다. (false: 분 -> 시간, true: 시간 -> 분)
+    4. 버튼:
+    Reset 버튼: 클릭 시 amount 상태를 0으로 초기화해야 한다.
+    Flip 버튼: 클릭 시 다음 동작을 수행해야 한다.
+    amount 상태를 0으로 초기화한다.
+    flipped 상태를 현재 값의 반대 값으로 변경한다.
+    5. UI 표시:
+    "Super Converter"라는 제목을 표시해야 한다.
+    각 입력 필드에 대한 레이블("minutes", "Hours")을 명확하게 표시해야 한다.
+    변환된 결과 값을 해당 입력 필드에 실시간으로 표시해야 한다.
+    비기능적 요구사항:
+
+    6. 사용성: 사용자가 직관적으로 단위를 입력하고 변환 결과를 확인할 수 있도록 UI가 구성되어야 한다.
+    실시간성: 입력 값이 변경됨에 따라 변환 결과가 즉시 업데이트되어야 한다.
+    */
     const root = document.getElementById("root");
     function App() {
       const [amount, setAmount] = React.useState();
